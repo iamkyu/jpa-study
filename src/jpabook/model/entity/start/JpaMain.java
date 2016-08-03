@@ -31,6 +31,7 @@ public class JpaMain {
             queryLogicJoin(em);
             updateRelation(em);
             deleteRelation(em);
+            biDirection(em);
 
             tx.commit();//트랜잭션 커밋
 
@@ -84,5 +85,15 @@ public class JpaMain {
     private static void deleteRelation(EntityManager em) {
         Member member1 = em.find(Member.class, "member1");
         member1.setTeam(null);
+    }
+
+    // 일대다 방향으로 객체 그래프 탐색
+    private static void biDirection(EntityManager em) {
+        Team team = em.find(Team.class, "team1");
+        List<Member> members = team.getMembers(); //  팀->회원
+
+        for (Member member : members) {
+            System.out.println("member.username = " + member.getUsername());
+        }
     }
 }

@@ -3,6 +3,9 @@ package jpabook.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kj Nam
@@ -25,6 +28,9 @@ public class Team {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<Member>();
+
     public String getId() {
         return id;
     }
@@ -39,5 +45,13 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Member> members) {
+        this.members = members;
     }
 }
