@@ -1,4 +1,4 @@
-package jpabook.model.entity;
+package jpabook.model.exam;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -55,8 +55,4 @@ public class Order {
     public void setStatus(OrderStatus status) {
         this.status = status;
     }
-}
-
-enum OrderStatus {
-    ORDER, CANCEL
 }

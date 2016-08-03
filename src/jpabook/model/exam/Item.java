@@ -1,4 +1,4 @@
-package jpabook.model.entity;
+package jpabook.model.exam;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
