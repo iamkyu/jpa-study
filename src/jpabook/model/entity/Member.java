@@ -15,6 +15,9 @@ public class Member {
 
     private String username;
 
+    @Embedded Period workPeriod;
+    @Embedded Address homeAddress;
+
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")
     private Team team;
