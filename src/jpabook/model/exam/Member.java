@@ -1,6 +1,13 @@
 package jpabook.model.exam;
 
-import javax.persistence.*;
+import jpabook.model.entity.Address;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +28,9 @@ public class Member extends BaseEntity {
     private String city;
     private String street;
     private String zipcode;
+
+    @Embedded
+    private Address adress;
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<Order>();

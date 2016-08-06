@@ -1,6 +1,9 @@
 package jpabook.model.exam;
 
+import jpabook.model.entity.Address;
+
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,6 +28,9 @@ public class Delivery {
     private String city;
     private String street;
     private String zipcode;
+
+    @Embedded
+    private Address address;
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus sttus;
