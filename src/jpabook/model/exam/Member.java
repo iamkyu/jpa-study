@@ -9,7 +9,7 @@ import java.util.List;
  * @since 2016-08-03
  */
 @Entity
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue // @GeneratedValue 기본값은 AUTO. DBMS 방언에 따라 자동 선택됨.
